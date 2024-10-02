@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portfolio Zoe TRUONG CANH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 text-white shadow-lg">
+    <nav class="container mx-auto flex justify-between items-center p-6">
+      <div class="text-2xl font-bold tracking-wider">Portfolio Zoe TRUONG CANH</div>
+      <ul class="flex space-x-6">
+        <li><a href="#about" class="hover:text-blue-400">À propos</a></li>
+        <li><a href="#projects" class="hover:text-blue-400">Projets</a></li>
+        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-900 text-white py-24">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-4"> Killer Queen </h1>
+      <p class="text-xl max-w-2xl mx-auto">Compétences : Systèmes embarqués, le développement web, rédaction.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto py-20">
+    <h2 class="text-4xl font-bold text-center mb-10">À propos de moi</h2>
+    <div class="flex flex-col md:flex-row justify-between items-center md:space-x-10">
+      <img src="https://via.placeholder.com/250" alt="Zoé" class="rounded-full shadow-lg mb-8 md:mb-0">
+      <div class="text-lg max-w-xl leading-relaxed">
+        <p>Je m'appelle Zoé, j'adore la musique.</p>
+        <p class="mt-4"><strong>Compétences :</strong> Informatique, Rédaction, HTML & CSS, JavaScript</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-200 py-20">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Mes Projets</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- Project 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+          <img src="https://via.placeholder.com/300x200" alt="Projet 1" class="mb-4 rounded-lg">
+          <h3 class="text-2xl font-semibold mb-2">Systèmes embarqués : Station Météo</h3>
+          <p class="text-gray-600">À l'aide de l'Arduino et microcontrôleurs, comprenant des capteurs, et du traitement de données en temps réel, nous allons créer une station météo.</p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+          <img src="https://via.placeholder.com/300x200" alt="Projet 2" class="mb-4 rounded-lg">
+          <h3 class="text-2xl font-semibold mb-2">Programation Orientée Objet (POO) </h3>
+          <p class="text-gray-600">Conception et réalisation de sites web interactifs avec HTML, CSS, et JavaScript, optimisés pour la performance et l'accessibilité.</p>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+          <img src="https://via.placeholder.com/300x200" alt="Projet 3" class="mb-4 rounded-lg">
+          <h3 class="text-2xl font-semibold mb-2">Réseaux</h3>
+          <p class="text-gray-600"> Compréhension du fonctionnement des réseaux. </p>
+        </div>
+
+	<!-- Project 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+          <img src="https://via.placeholder.com/300x200" alt="Projet 4" class="mb-4 rounded-lg">
+          <h3 class="text-2xl font-semibold mb-2">Développement Web</h3>
+          <p class="text-gray-600">Conception et réalisation de sites web interactifs avec HTML5, CSS, et JavaScript, optimisés pour la performance et l'accessibilité.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container mx-auto py-20">
+    <h2 class="text-4xl font-bold text-center mb-10">Contactez-moi</h2>
+    <div class="flex justify-center">
+      <form action="#" method="POST" class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <div class="mb-6">
+          <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
+          <input type="text" id="name" name="name" class="w-full mt-1 p-3 border border-gray-300 rounded-lg">
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" class="w-full mt-1 p-3 border border-gray-300 rounded-lg">
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full mt-1 p-3 border border-gray-300 rounded-lg"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Esther. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
