@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Projet 3 - Mécanique</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@400;700&family=Calistoga&display=swap" rel="stylesheet">
+
+  <style>
+    /* Font and layout styles */
+    h1, h2 { font-family: 'Libre Baskerville', serif; }
+    body, p, li, a { font-family: 'Merriweather', serif; }
+    
+    /* Full-width image styling */
+    .header-image {
+      width: 100%;
+      height: 60vh; /* 60% of viewport height */
+      object-fit: cover;
+      filter: brightness(85%);
+    }
+
+    /* Styled title container with dark border */
+    .header-title {
+      font-family: 'Calistoga', serif;
+      color: #000000;
+      padding: 1rem 2rem;
+      background-color: #e0e0dc; /* Gris-beige */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+      border-radius: 8px;
+      border: 2px solid #4a4a4a; /* Gris foncé/noir */
+    }
+
+    /* Centering title with full background */
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Darker shadow for sections */
+    .section {
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); /* Ombre plus foncée */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); /* Ombre plus prononcée au survol */
+    }
+
+    /* Content layout */
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Full-width Image Header -->
+  <section class="relative">
+    <img src="C:/Users/zoetr/Documents/Portfolio/Images/Méca.png" alt="Projet Mécanique" class="header-image">
+    <div class="header-overlay">
+      <h1 class="text-5xl header-title">Projet 3 - Mécanique : Calcul de Trajectoire</h1>
+    </div>
+  </section>
+
+  <!-- Main Content Sections -->
+  <section class="content-container py-12">
+    <div class="section mb-8">
+      <h2 class="text-3xl font-bold mb-4">Résumé du Projet</h2>
+      <p>Calcul de la trajectoire d'un véhicule pour optimiser son parcours sur un circuit de course, en identifiant la trajectoire la plus efficace et rapide.</p>
+    </div>
+
+    <div class="section mb-8">
+      <h2 class="text-3xl font-bold mb-4">Compétences Acquises</h2>
+      <ul class="list-disc pl-6">
+        <li>Analyse des mouvements et trajectoires</li>
+        <li>Utilisation des principes de dynamique et cinématique</li>
+        <li>Optimisation des trajectoires pour des conditions de course</li>
+      </ul>
+    </div>
+
+    <div class="section mb-8">
+      <h2 class="text-3xl font-bold mb-4">Logiciels Utilisés</h2>
+      <ul class="list-disc pl-6">
+        <li>MATLAB pour les calculs de dynamique</li>
+        <li>Simulink pour les simulations de trajectoire</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="text-3xl font-bold mb-4">Utilité dans le Cadre Professionnel</h2>
+      <p>Ce projet m'a permis de développer des compétences en analyse et optimisation de trajectoire, essentielles dans des domaines comme l'ingénierie automobile et la planification de parcours pour véhicules autonomes.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>&copy; 2024 Zoé TRUONG CANH. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

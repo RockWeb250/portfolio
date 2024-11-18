@@ -1,1 +1,1 @@
-
+sudo dpkg –i nomdufichiertelecharge.deb
