@@ -1,0 +1,188 @@
+/* style.css - Fichier CSS commun pour le portfolio */
+
+/* Variables pour les couleurs */
+:root {
+    --primary-color: #0a4275;      /* Bleu foncé */
+    --secondary-color: #1565c0;    /* Bleu moyen */
+    --accent-color: #64b5f6;       /* Bleu clair */
+    --text-color: #333333;         /* Gris foncé pour le texte */
+    --bg-color: #f5f9ff;           /* Fond légèrement bleuté */
+    --section-bg: #ffffff;         /* Fond des sections */
+    --section-border: #dbe9f6;     /* Bordure bleu très clair */
+    --hover-shadow: rgba(21, 101, 192, 0.2); /* Ombre au survol */
+    --header-overlay: rgba(10, 66, 117, 0.7); /* Overlay pour le header */
+    --footer-bg: #0a4275;          /* Fond du footer */
+  }
+  
+  /* Réinitialisation et styles de base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Merriweather', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Typographie */
+  h1, h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+  }
+  
+  p, li {
+    margin-bottom: 1rem;
+  }
+  
+  /* Header et image de couverture */
+  .header-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--header-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+  
+  .header-title {
+    font-family: 'Calistoga', serif;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    max-width: 90%;
+  }
+  
+  /* Structure de contenu */
+  .content-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    background-color: var(--section-bg);
+    border-radius: 8px;
+    border: 1px solid var(--section-border);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--hover-shadow);
+  }
+  
+  /* Listes */
+  .section ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .section ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  .section ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--footer-bg);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .header-title {
+      font-size: 1.8rem;
+      padding: 1rem 1.5rem;
+    }
+    
+    .section {
+      padding: 1.5rem;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-title {
+      font-size: 1.5rem;
+      padding: 0.8rem 1rem;
+    }
+    
+    .header-container {
+      height: 40vh;
+    }
+    
+    .section {
+      padding: 1.2rem;
+    }
+  }
