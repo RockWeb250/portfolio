@@ -9,301 +9,14 @@
   <!-- Polices Google -->
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@400;700&family=Calistoga&display=swap" rel="stylesheet">
   
-  <!-- Feuille de style CSS externe principale -->
+  <!-- Feuille de style CSS externe -->
   <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Styles spécifiques à la page d'accueil -->
-  <style>
-    /* Styles spécifiques à la page d'index qui ne sont pas dans le style.css principal */
-    .bg-gradient {
-      background: linear-gradient(135deg, var(--primary-color) 0%, #05284e 100%);
-    }
-    
-    .hero-text {
-      animation: fadeInUp 1s ease-in-out;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .fade-on-scroll {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .fade-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Navbar styles */
-    .navbar {
-      background-color: var(--primary-color);
-      color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      position: fixed;
-      width: 100%;
-      z-index: 10;
-      top: 0;
-    }
-    
-    .navbar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .navbar-logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    
-    .navbar-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    
-    .navbar-links a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-    
-    .navbar-links a:hover {
-      color: var(--accent-color);
-    }
-    
-    /* Project cards */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .project-card {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-    
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    
-    .project-content {
-      padding: 1.5rem;
-    }
-    
-    .project-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-    
-    .project-description {
-      color: #666;
-      line-height: 1.6;
-    }
-    
-    /* Timeline styles */
-    .timeline-container {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 0;
-      background-color: rgba(219, 233, 246, 0.3);
-      border-radius: 10px;
-    }
-    
-    .timeline-item {
-      padding: 1rem;
-      position: relative;
-      width: 50%;
-    }
-    
-    .timeline-item.left {
-      left: 0;
-    }
-    
-    .timeline-item.right {
-      left: 50%;
-    }
-    
-    .timeline-item.left::before,
-    .timeline-item.right::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background-color: var(--accent-color);
-      border: 3px solid var(--primary-color);
-      border-radius: 50%;
-      top: 20px;
-      z-index: 1;
-    }
-    
-    .timeline-item.left::before {
-      right: -8px;
-    }
-    
-    .timeline-item.right::before {
-      left: -8px;
-    }
-    
-    .timeline-item .content {
-      padding: 1rem;
-      background-color: white;
-      position: relative;
-      border-radius: 8px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .timeline-container::after {
-      content: "";
-      position: absolute;
-      width: 4px;
-      background-color: var(--accent-color);
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -2px;
-    }
-    
-    .timeline-item .content:hover {
-      transform: scale(1.03);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      background-color: #f0f7ff;
-    }
-    
-    /* Langues section */
-    .langues-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .langue-card {
-      background-color: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s;
-    }
-    
-    .langue-card:hover {
-      background-color: #e6f2ff;
-    }
-    
-    /* Contact button */
-    .contact-button {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .contact-button:hover {
-      background-color: var(--secondary-color);
-      transform: scale(1.05);
-    }
-    
-    /* Layout helpers */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--primary-color);
-      position: relative;
-      padding-bottom: 1rem;
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 4px;
-      background-color: var(--accent-color);
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    .section-spacing {
-      padding: 5rem 0;
-    }
-    
-    /* Responsive fixes */
-    @media (max-width: 768px) {
-      .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-      
-      .timeline-container::after {
-        left: 31px;
-      }
-      
-      .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-      }
-      
-      .timeline-item.left::before,
-      .timeline-item.right::before {
-        left: 23px;
-      }
-      
-      .timeline-item.left {
-        left: 0;
-      }
-      
-      .timeline-item.right {
-        left: 0;
-      }
-    }
-  </style>
 </head>
 
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <nav class="navbar-container">
+    <nav class="container">
       <div class="navbar-logo">Portfolio Zoé TRUONG CANH</div>
       <ul class="navbar-links">
         <li><a href="#about">À propos</a></li>
@@ -314,58 +27,67 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient text-white py-40 hero-text">
+  <section class="hero">
     <div class="container text-center">
-      <h1 class="text-6xl font-bold mb-4">Zoé TRUONG CANH</h1>
-      <p class="text-xl max-w-2xl mx-auto">Deuxième année de préparation intégrée à l'école d'ingénieur CESI.</p>
+      <h1 class="hero-title">Zoé TRUONG CANH</h1>
+      <p class="hero-subtitle">Deuxième année de préparation intégrée à l'école d'ingénieur CESI.</p>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="container section-spacing fade-on-scroll">
-    <h2 class="section-title text-4xl font-bold">Aperçu</h2>
-    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-      <a href="CV.pdf" target="_blank" class="rounded-full bg-primary-color text-white flex items-center justify-center w-32 h-32 mb-8 md:mb-0 transform hover:scale-110 transition duration-300">
-        <span>Mon CV</span>
-      </a>
-      <div class="max-w-xl leading-relaxed text-center md:text-left">
+<section id="about" class="section-spacing fade-on-scroll">
+  <div class="container">
+    <h2 class="section-title">Aperçu</h2>
+    <div class="about-content">
+      <div class="cv-button-container">
+        <a href="C_V.pdf" target="_blank" class="cv-button">
+          <span>Mon CV</span>
+        </a>
+      </div>
+      <div class="about-text">
         <p>Je m'appelle Zoé TRUONG CANH. Je suis une personne motivée, travailleuse, sérieuse, autonome et ponctuelle.</p>
-        <hr class="my-4 border-t border-gray-300">
-        <p><strong>Compétences en développement :</strong> Rédaction de projets, Codage de programmes simples (C, Python), manipulation de bases de données.</p>
+        <hr class="divider">
+        <p><strong>Compétences en développement :</strong> Rédaction de projets, Codage de programmes simples (C, Python).</p>
         <p><strong>Savoir-être :</strong> Travail d'équipe, Rigueur, Autonomie.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+  <div class="section-divider" style="max-width: 50%;"></div>
 
   <!-- Langues Section -->
-  <section class="container">
-    <h3 class="text-3xl font-semibold text-center mt-10 mb-6">Langues</h3>
+  <section class="container section-spacing">
+    <h3 class="section-subtitle">Langues</h3>
     <div class="langues-grid">
       <!-- Bloc Anglais Courant -->
       <div class="langue-card">
-        <h4 class="text-xl font-bold mb-2">Anglais courant</h4>
+        <h4 class="langue-title">Anglais courant</h4>
         <p>Je m'exprime et comprends l'Anglais aisément, autant à l'oral qu'à l'écrit.</p>
       </div>
 
       <!-- Bloc Anglais Technique -->
       <div class="langue-card">
-        <h4 class="text-xl font-bold mb-2">Anglais technique</h4>
+        <h4 class="langue-title">Anglais technique</h4>
         <p>Je comprends un projet formulé en Anglais et peux rédiger un rapport technique dans cette langue.</p>
       </div>
     </div>
   </section>
 
+  <div class="section-divider" style="max-width: 50%;"></div>
+
+
   <!-- Timeline Section -->
   <section class="container section-spacing">
-    <h3 class="text-3xl font-semibold text-center mb-6">Mon parcours</h3>
+    <h3 class="section-subtitle">Mon parcours</h3>
     <div class="timeline-container">
       <!-- 2023-2025: École d'Ingénieur -->
       <div class="timeline-item left">
         <div class="content">
-          <h4 class="font-bold">2023-2025 : École d'Ingénieur</h4>
+          <h4 class="timeline-title">2023-2025 : École d'Ingénieur</h4>
           <p><i>CESI, Saint-Étienne du Rouvray</i></p>
           <p>Premier Cycle - Préparation Intégrée</p>
-          <ul class="list-disc ml-4">
+          <ul>
             <li>2023-2024 : Première année préparatoire générale.</li>
             <li>2024-2025 : Deuxième année préparatoire option Sciences du Numérique.</li>
           </ul>
@@ -375,8 +97,8 @@
       <!-- 2016-2023: Lycée Saint Adjutor -->
       <div class="timeline-item right">
         <div class="content">
-          <h4 class="font-bold">2016-2023 : Lycée Saint Adjutor</h4>
-          <ul class="list-disc ml-4">
+          <h4 class="timeline-title">2016-2023 : Lycée Saint Adjutor</h4>
+          <ul>
             <li>Mention Bien au Baccalauréat Général.</li>
             <li>Spécialités Mathématiques et Physique-Chimie.</li>
           </ul>
@@ -386,12 +108,12 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="bg-gray-100 section-spacing fade-on-scroll">
+  <section id="projects" class="projects-section fade-on-scroll">
     <div class="container">
-      <h2 class="section-title text-4xl font-bold">Mes Projets</h2>
+      <h2 class="section-title">Mes Projets</h2>
 
-      <!-- Année 1 Projets -->
-      <h3 class="text-3xl font-semibold text-center mb-6">Projets Première Année</h3>
+      <!-- Projets Première Année -->
+      <h3 class="section-subtitle">Projets Première Année</h3>
       <div class="project-grid">
         
         <!-- Project 1 -->
@@ -400,7 +122,7 @@
             <img src="images/Elec.png" alt="Projet 1" class="project-image">
             <div class="project-content">
               <h3 class="project-title">Electronique</h3>
-              <p class="project-description">Création d'un dispositif sécuritaire pour une agence d'espionnage pour que seuls les membres puissent rentrer dans le coffre.</p>
+              <p class="project-description">Création d'un dispositif sécuritaire pour une agence d'espionnage pour que seuls les membres puissent rentrer dans le coffre et qu'il n'y ait plus d'intrusion.</p>
             </div>
           </a>
         </div>
@@ -411,7 +133,7 @@
             <img src="images/Pulse.png" alt="Projet 2" class="project-image">
             <div class="project-content">
               <h3 class="project-title">Signal</h3>
-              <p class="project-description">Création d'un prototype permettant de communiquer vers l'extérieur depuis une pièce sans accès réseau.</p>
+              <p class="project-description">Création d'un prototype permettant de communiquer vers l'extérieur depuis une pièce sans accès réseau et brouillant tout système utilisant des ondes.</p>
             </div>
           </a>
         </div>
@@ -429,49 +151,49 @@
 
         <!-- Project 4 -->
         <div class="project-card">
-          <a href="Année 1_Projet 4.html">
+          <a href="Année 1_Projet 4.html">  
             <img src="images/Indus.png" alt="Projet 4" class="project-image">
             <div class="project-content">
               <h3 class="project-title">Industrie</h3>
-              <p class="project-description">Compréhension du fonctionnement d'une entreprise, les délais de fabrication et le management des finances.</p>
+              <p class="project-description">Compréhension du fonctionnement d'une entreprise, les délais de fabrication et le management des finances via la production d'un dispositif renvoyant des données.</p>
             </div>
           </a>
         </div>
 
         <!-- Project 5 -->
         <div class="project-card">
-          <a href="Année 1_Projet 5.html">
+          <a href="Année 1_Projet 5.html"> 
             <img src="images/BDD.png" alt="Projet 5" class="project-image">
             <div class="project-content">
               <h3 class="project-title">Base De Données</h3>
-              <p class="project-description">Création d'une base de données dont les valeurs sont mesurées par des capteurs dans différentes villes en France.</p>
+              <p class="project-description">Création d'une base de données dont les valeurs sont mesurées par des capteurs dans différentes villes en France, afin de simplifier et accélérer la recherche.</p>
             </div>
-          </a>
+          </a> 
         </div>
 
         <!-- Project 6 -->
         <div class="project-card">
-          <a href="Année 1_Projet 6.html">
+          <a href="Année 1_Projet 6.html">  
             <img src="images/BTP.jpg" alt="Projet 6" class="project-image">
             <div class="project-content">
               <h3 class="project-title">Bâtiments et Travaux Publiques</h3>
-              <p class="project-description">Gestion de la construction d'une habitation secondaire (un conteneur), sa modélisation en 3D et ses fondations.</p>
+              <p class="project-description">Gestion de la construction d'une habitation secondaire (un conteneur), sa modélisation en 3D, ses fondations, et proposer les meilleurs matériaux.</p>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- Séparateur et titre pour Année 2 -->
-      <hr class="my-12 border-gray-300">
-      <h3 class="text-3xl font-semibold text-center mb-6">Projets Deuxième Année</h3>
+      <!-- Projets Deuxième Année -->
+      <div class="section-divider"></div>
+      <h3 class="section-subtitle">Projets Deuxième Année</h3>
       <div class="project-grid">
         <!-- Project 1 -->
         <div class="project-card">
-          <a href="Année 2_Projet 1.html">
+          <a href="Année 2_Projet 1.html">  
             <img src="images/Ardu.jpg" alt="Projet 1" class="project-image">
             <div class="project-content">
               <h3 class="project-title">Systèmes embarqués</h3>
-              <p class="project-description">Création d'une station météo sur Arduino UNO en langage C, avec laquelle un utilisateur pourra interagir.</p>
+              <p class="project-description">Création d'une station météo sur Arduino UNO en langage C, avec laquelle un utilisateur pourra interagir tandis que le système traitera des données.</p>
             </div>
           </a>
         </div>
@@ -499,7 +221,7 @@
           <img src="images/web.png" alt="Projet 4" class="project-image">
           <div class="project-content">
             <h3 class="project-title">Développement Web</h3>
-            <p class="project-description">Conception de sites web responsives et interactifs avec HTML5, CSS, et JavaScript, optimisés pour la performance.</p>
+            <p class="project-description">Conception de sites web responsives et interactifs avec HTML5, CSS, et JavaScript, optimisés pour la performance et l'accessibilité.</p>
           </div>
         </div>
       </div>
@@ -507,9 +229,9 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="container section-spacing fade-on-scroll text-center">
-    <h2 class="section-title text-4xl font-bold">Contactez-moi</h2>
-    <div>
+  <section id="contact" class="section-spacing fade-on-scroll">
+    <div class="container text-center">
+      <h2 class="section-title">Contactez-moi</h2>
       <a href="mailto:zoe.truongcanh@viacesi.fr" class="contact-button">
         Envoyer un email via Outlook
       </a>
@@ -519,10 +241,20 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; Zoé TRUONG CANH. Tous droits réservés.</p> 
+      <p>&copy; Zoé TRUONG CANH. Tous droits réservés.</p>
     </div>
   </footer>
 
-  <script src="js/scroll-fade.js"></script>
+  <script>
+    document.addEventListener("scroll", function() {
+      const fadeElements = document.querySelectorAll('.fade-on-scroll');
+      fadeElements.forEach(function(element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= window.innerHeight) {
+          element.classList.add('visible');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
