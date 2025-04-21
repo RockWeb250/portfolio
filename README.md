@@ -1,1 +1,1 @@
-Hello World !
+sudo dpkg –i nomdufichiertelecharge.deb
