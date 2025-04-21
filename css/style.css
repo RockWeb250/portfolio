@@ -7,8 +7,8 @@
   --accent-color: #64b5f6;       /* Bleu clair */
   --text-color: #333333;         /* Gris foncé pour le texte */
   --bg-color: #ffffff;           /* Fond légèrement bleuté */
-  --section-bg: #e4eefc;         /* Fond des sections */
-  --section-border: #dbe9f6;     /* Bordure bleu très clair */
+  --section-bg: #ffffff;         /* Fond des sections */
+  --section-border: #dadada;     /* Bordure bleu très clair */
   --hover-shadow: rgba(21, 101, 192, 0.2); /* Ombre au survol */
   --header-overlay: rgba(10, 66, 117, 0.7); /* Overlay pour le header */
   --footer-bg: #0a4275;          /* Fond du footer */
@@ -252,6 +252,7 @@ p, li {
 .cv-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  color: var(--accent-color);
 }
 
 .divider {
@@ -259,6 +260,39 @@ p, li {
   height: 1px;
   background-color: #ddd;
   margin: 1.5rem 0;
+}
+
+/* Styles pour le bouton de retour */
+.back-button-container {
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+  padding: 1.5rem 0;
+  margin-top: 1rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.back-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-arrow {
+  margin-right: 0.5rem;
+  font-size: 1.2em;
 }
 
 /* Langues section */
