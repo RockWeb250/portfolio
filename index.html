@@ -1,38 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Portfolio Zoe TRUONG CANH</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Import Google Fonts -->
+  <!-- Polices Google -->
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@400;700&family=Calistoga&display=swap" rel="stylesheet">
-
+  
+  <!-- Feuille de style CSS externe principale -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Styles spécifiques à la page d'accueil -->
   <style>
-    /* Apply font styles */
-    h1, h2 {
-      font-family: 'Libre Baskerville', serif;
-    }
-
-    h3, h4 {
-      font-family: 'Calistoga', serif;
-    }
-
-    body, p, li, a {
-      font-family: 'Merriweather', serif;
-    }
-
+    /* Styles spécifiques à la page d'index qui ne sont pas dans le style.css principal */
     .bg-gradient {
-      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #05284e 100%);
     }
-
+    
     .hero-text {
       animation: fadeInUp 1s ease-in-out;
     }
-
+    
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -43,63 +33,302 @@
         transform: translateY(0);
       }
     }
-
+    
     .fade-on-scroll {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-
+    
     .fade-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Adjust icon size */
-    img.rounded-full {
-      width: 200px;  
-      height: 200px; 
+    
+    /* Navbar styles */
+    .navbar {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+      top: 0;
+    }
+    
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .navbar-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    
+    .navbar-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .navbar-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    /* Project cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
       object-fit: cover;
     }
-
-    /* Standardize project images */
-    #projects img {
-      width: 100%;
-      height: 200px; /* Uniform height */
-      object-fit: cover; /* Maintain aspect ratio */
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    
+    .project-description {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Timeline styles */
+    .timeline-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+      background-color: rgba(219, 233, 246, 0.3);
+      border-radius: 10px;
+    }
+    
+    .timeline-item {
+      padding: 1rem;
+      position: relative;
+      width: 50%;
+    }
+    
+    .timeline-item.left {
+      left: 0;
+    }
+    
+    .timeline-item.right {
+      left: 50%;
+    }
+    
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: var(--accent-color);
+      border: 3px solid var(--primary-color);
+      border-radius: 50%;
+      top: 20px;
+      z-index: 1;
+    }
+    
+    .timeline-item.left::before {
+      right: -8px;
+    }
+    
+    .timeline-item.right::before {
+      left: -8px;
+    }
+    
+    .timeline-item .content {
+      padding: 1rem;
+      background-color: white;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .timeline-container::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      background-color: var(--accent-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    
+    .timeline-item .content:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      background-color: #f0f7ff;
+    }
+    
+    /* Langues section */
+    .langues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .langue-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+    }
+    
+    .langue-card:hover {
+      background-color: #e6f2ff;
+    }
+    
+    /* Contact button */
+    .contact-button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-button:hover {
+      background-color: var(--secondary-color);
+      transform: scale(1.05);
+    }
+    
+    /* Layout helpers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent-color);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .section-spacing {
+      padding: 5rem 0;
+    }
+    
+    /* Responsive fixes */
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .timeline-container::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item.left::before,
+      .timeline-item.right::before {
+        left: 23px;
+      }
+      
+      .timeline-item.left {
+        left: 0;
+      }
+      
+      .timeline-item.right {
+        left: 0;
+      }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800" id="body">
 
+<body>
   <!-- Navbar -->
-  <header class="bg-gray-800 text-white shadow-lg fixed w-full z-10 top-0">
-    <nav class="container mx-auto flex justify-between items-center p-6">
-      <div class="text-2xl font-bold tracking-wider">Portfolio Zoé TRUONG CANH</div>
-      <ul class="flex space-x-6">
-        <li><a href="#about" class="hover:text-blue-400">À propos</a></li>
-        <li><a href="#projects" class="hover:text-blue-400">Projets</a></li>
-        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+  <header class="navbar">
+    <nav class="navbar-container">
+      <div class="navbar-logo">Portfolio Zoé TRUONG CANH</div>
+      <ul class="navbar-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="bg-gradient text-white py-40 hero-text">
-    <div class="container mx-auto text-center">
-      <h1 class="text-6xl font-extrabold mb-4">Zoé TRUONG CANH</h1>
+    <div class="container text-center">
+      <h1 class="text-6xl font-bold mb-4">Zoé TRUONG CANH</h1>
       <p class="text-xl max-w-2xl mx-auto">Deuxième année de préparation intégrée à l'école d'ingénieur CESI.</p>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="container mx-auto py-20 fade-on-scroll">
-    <h2 class="text-4xl font-bold text-center mb-10">Aperçu</h2>
-    <div class="flex flex-col md:flex-row justify-center items-center md:space-x-6">
-      <a href="file:///C:/Users/zoetr/Documents/Portfolio/C_V.pdf" target="_blank" class="rounded-full shadow-lg bg-gray-800 text-white flex items-center justify-center w-32 h-32 mb-8 md:mb-0 transform hover:scale-110 transition-transform font-semibold text-xl hover:bg-gray-900 hover:text-yellow-400 hover:shadow-xl transition duration-300 ease-in-out">
+  <section id="about" class="container section-spacing fade-on-scroll">
+    <h2 class="section-title text-4xl font-bold">Aperçu</h2>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+      <a href="CV.pdf" target="_blank" class="rounded-full bg-primary-color text-white flex items-center justify-center w-32 h-32 mb-8 md:mb-0 transform hover:scale-110 transition duration-300">
         <span>Mon CV</span>
       </a>
-      <div class="text-lg max-w-xl leading-relaxed text-center md:text-left">
+      <div class="max-w-xl leading-relaxed text-center md:text-left">
         <p>Je m'appelle Zoé TRUONG CANH. Je suis une personne motivée, travailleuse, sérieuse, autonome et ponctuelle.</p>
         <hr class="my-4 border-t border-gray-300">
         <p><strong>Compétences en développement :</strong> Rédaction de projets, Codage de programmes simples (C, Python), manipulation de bases de données.</p>
@@ -108,266 +337,192 @@
     </div>
   </section>
 
-<!-- Langues Section -->
-<h3 class="text-3xl font-semibold text-center mt-10 mb-6">Langues</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-  <!-- Bloc Anglais Courant -->
-  <div class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-100 transition-colors duration-300">
-    <h4 class="text-xl font-bold mb-2">Anglais courant</h4>
-    <p>Je m'exprime et comprends l'Anglais aisément, autant à l'oral qu'à l'écrit.</p>
-  </div>
+  <!-- Langues Section -->
+  <section class="container">
+    <h3 class="text-3xl font-semibold text-center mt-10 mb-6">Langues</h3>
+    <div class="langues-grid">
+      <!-- Bloc Anglais Courant -->
+      <div class="langue-card">
+        <h4 class="text-xl font-bold mb-2">Anglais courant</h4>
+        <p>Je m'exprime et comprends l'Anglais aisément, autant à l'oral qu'à l'écrit.</p>
+      </div>
 
-  <!-- Bloc Anglais Technique -->
-  <div class="bg-white p-5 rounded-lg shadow-md hover:bg-blue-100 transition-colors duration-300">
-    <h4 class="text-xl font-bold mb-2">Anglais technique</h4>
-    <p>Je comprends un projet formulé en Anglais et peux rédiger un rapport technique dans cette langue.</p>
-  </div>
-</div>
-
-
-<!-- Timeline Section -->
-<h3 class="text-3xl font-semibold text-center mt-10 mb-6">Mon parcours</h3>
-<div class="timeline-container">
-  <!-- 2023-2025: École d'Ingénieur -->
-  <div class="timeline-item left">
-    <div class="content">
-      <h4 class="font-bold">2023-2025 : École d'Ingénieur</h4>
-      <p><i>CESI, Saint-Étienne du Rouvray</i></p>
-      <p>Premier Cycle - Préparation Intégrée</p>
-      <ul class="list-disc ml-4">
-        <li>2023-2024 : Première année préparatoire générale.</li>
-        <li>2024-2025 : Deuxième année préparatoire option Sciences du Numérique.</li>
-      </ul>
+      <!-- Bloc Anglais Technique -->
+      <div class="langue-card">
+        <h4 class="text-xl font-bold mb-2">Anglais technique</h4>
+        <p>Je comprends un projet formulé en Anglais et peux rédiger un rapport technique dans cette langue.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 2016-2023: Lycée Saint Adjutor -->
-  <div class="timeline-item right">
-    <div class="content">
-      <h4 class="font-bold">2016-2023 : Lycée Saint Adjutor</h4>
-      <ul class="list-disc ml-4">
-      	<li>Mention Bien au Baccalauréat Général.</li>
-     	<li>Spécialités Mathématiques et Physique-Chimie.</li>
-      </ul>
+  <!-- Timeline Section -->
+  <section class="container section-spacing">
+    <h3 class="text-3xl font-semibold text-center mb-6">Mon parcours</h3>
+    <div class="timeline-container">
+      <!-- 2023-2025: École d'Ingénieur -->
+      <div class="timeline-item left">
+        <div class="content">
+          <h4 class="font-bold">2023-2025 : École d'Ingénieur</h4>
+          <p><i>CESI, Saint-Étienne du Rouvray</i></p>
+          <p>Premier Cycle - Préparation Intégrée</p>
+          <ul class="list-disc ml-4">
+            <li>2023-2024 : Première année préparatoire générale.</li>
+            <li>2024-2025 : Deuxième année préparatoire option Sciences du Numérique.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2016-2023: Lycée Saint Adjutor -->
+      <div class="timeline-item right">
+        <div class="content">
+          <h4 class="font-bold">2016-2023 : Lycée Saint Adjutor</h4>
+          <ul class="list-disc ml-4">
+            <li>Mention Bien au Baccalauréat Général.</li>
+            <li>Spécialités Mathématiques et Physique-Chimie.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- CSS pour la frise chronologique améliorée avec effet de surbrillance -->
-<style>
-  /* Style de la frise chronologique avec fond gris-bleu */
-  .timeline-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
-    background-color: #e8e5e5; /* Gris-beige léger */
-    border-radius: 10px; /* Coins arrondis */
-  }
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-100 section-spacing fade-on-scroll">
+    <div class="container">
+      <h2 class="section-title text-4xl font-bold">Mes Projets</h2>
 
-  .timeline-item {
-    padding: 1rem;
-    position: relative;
-    width: 50%;
-  }
+      <!-- Année 1 Projets -->
+      <h3 class="text-3xl font-semibold text-center mb-6">Projets Première Année</h3>
+      <div class="project-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card">
+          <a href="Année 1_Projet 1.html">
+            <img src="images/Elec.png" alt="Projet 1" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Electronique</h3>
+              <p class="project-description">Création d'un dispositif sécuritaire pour une agence d'espionnage pour que seuls les membres puissent rentrer dans le coffre.</p>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+          <a href="Année 1_Projet 2.html">
+            <img src="images/Pulse.png" alt="Projet 2" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Signal</h3>
+              <p class="project-description">Création d'un prototype permettant de communiquer vers l'extérieur depuis une pièce sans accès réseau.</p>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+          <a href="Année 1_Projet 3.html">
+            <img src="images/Méca.png" alt="Projet 3" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Mécanique</h3>
+              <p class="project-description">Calcul de la trajectoire d'un véhicule afin de choisir le plus efficace qui pourra finir un circuit de course le plus rapidement possible.</p>
+            </div>
+          </a>
+        </div>
 
-  .timeline-item.left {
-    left: 0;
-  }
+        <!-- Project 4 -->
+        <div class="project-card">
+          <a href="Année 1_Projet 4.html">
+            <img src="images/Indus.png" alt="Projet 4" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Industrie</h3>
+              <p class="project-description">Compréhension du fonctionnement d'une entreprise, les délais de fabrication et le management des finances.</p>
+            </div>
+          </a>
+        </div>
 
-  .timeline-item.right {
-    left: 50%;
-  }
+        <!-- Project 5 -->
+        <div class="project-card">
+          <a href="Année 1_Projet 5.html">
+            <img src="images/BDD.png" alt="Projet 5" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Base De Données</h3>
+              <p class="project-description">Création d'une base de données dont les valeurs sont mesurées par des capteurs dans différentes villes en France.</p>
+            </div>
+          </a>
+        </div>
 
-  .timeline-item.left::before,
-  .timeline-item.right::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #4a5568;
-    border-radius: 50%;
-    top: 20px;
-    z-index: 1;
-  }
-
-  .timeline-item.left::before {
-    right: -30px;
-  }
-
-  .timeline-item.right::before {
-    left: -30px;
-  }
-
-  .timeline-item .content {
-    padding: 1rem;
-    background-color: #f9f9f9;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .timeline-item.left .content {
-    margin-left: auto;
-  }
-
-  .timeline-item.right .content {
-    margin-right: auto;
-  }
-
-  .timeline-container::after {
-    content: "";
-    position: absolute;
-    width: 4px;
-    background-color: #cbd5e0;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
-  }
-
-  /* Effet de surbrillance au survol */
-  .timeline-item .content:hover {
-    transform: scale(1.05); /* Agrandissement léger */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
-    background-color: #e6f7ff; /* Couleur de fond légèrement changée */
-  }
-</style>
-
-
-<!-- Projects Section -->
-<section id="projects" class="bg-gray-100 py-20 fade-on-scroll">
-  <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-12">Mes Projets</h2>
-
-    <!-- Année 1 Projet 1 -->
-    <h3 class="text-3xl font-semibold text-center mt-10 mb-6">Projets Première Année</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      
-      <!-- Project 1 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-        <a href="Année 1_Projet 1.html" target="_blank">
-          <img src="C:/Users/zoetr/Documents/Portfolio/Images/Elec.png" alt="Projet 1" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-2xl font-semibold mb-2">Electronique</h3>
-          <p class="text-gray-600">Création d'un dispositif sécuritaire pour une agence d'espionnage pour que seuls les membres puissent rentrer dans le coffre et qu'il n'y ait plus d'intrusion.</p>
-        </a>
-      </div>
-      
-      <!-- Project 2 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-        <a href="Année 1_Projet 2.html" target="_blank">
-          <img src="C:/Users/zoetr/Documents/Portfolio/Images/Pulse.png" alt="Projet 2" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-2xl font-semibold mb-2">Signal</h3>
-          <p class="text-gray-600">Création d'un prototype permettant de communiquer vers l'extérieur depuis une pièce sans accès réseau et brouillant tout système utilisant des ondes.</p>
-        </a>
-      </div>
-      
- 	 <!-- Année 1 Project 3 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-       <a href="Année 1_Projet 3.html" target="_blank">
-        <img src="C:\Users\zoetr\Documents\Portfolio\Images\Méca.png" alt="Projet 3" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Mécanique</h3>
-        <p class="text-gray-600"> Calcul de la trajectoire d'un véhicule afin de choisir le plus efficace qui pourra finir un circuit de course le plus rapidement possible.</p> 
-       </a>
+        <!-- Project 6 -->
+        <div class="project-card">
+          <a href="Année 1_Projet 6.html">
+            <img src="images/BTP.jpg" alt="Projet 6" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Bâtiments et Travaux Publiques</h3>
+              <p class="project-description">Gestion de la construction d'une habitation secondaire (un conteneur), sa modélisation en 3D et ses fondations.</p>
+            </div>
+          </a>
+        </div>
       </div>
 
-     <!-- Année 1 Project 4 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-       <a href="Année 1_Projet 4.html" target="_blank">  
-	<img src="C:\Users\zoetr\Documents\Portfolio\Images\Indus.png" alt="Projet 4" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Industrie</h3>
-        <p class="text-gray-600"> Compréhension du fonctionnement d'une entreprise, les délais de fabrication et le management des finances via la production d'un dispositif renvoyant des données sur la qualité de l'air.</p> 
-       </a>
+      <!-- Séparateur et titre pour Année 2 -->
+      <hr class="my-12 border-gray-300">
+      <h3 class="text-3xl font-semibold text-center mb-6">Projets Deuxième Année</h3>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <a href="Année 2_Projet 1.html">
+            <img src="images/Ardu.jpg" alt="Projet 1" class="project-image">
+            <div class="project-content">
+              <h3 class="project-title">Systèmes embarqués</h3>
+              <p class="project-description">Création d'une station météo sur Arduino UNO en langage C, avec laquelle un utilisateur pourra interagir.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="images/POO.png" alt="Projet 2" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Programmation Orientée Objet (POO)</h3>
+            <p class="project-description">Développement de sites interactifs et dynamiques avec une approche orientée objet.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="images/Réseaux.png" alt="Projet 3" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Réseaux</h3>
+            <p class="project-description">Exploration des principes fondamentaux du réseau informatique, y compris les protocoles et la gestion des infrastructures réseau.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <img src="images/web.png" alt="Projet 4" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Développement Web</h3>
+            <p class="project-description">Conception de sites web responsives et interactifs avec HTML5, CSS, et JavaScript, optimisés pour la performance.</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Année 1 Project 5 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-       <a href="Année 1_Projet 5.html" target="_blank"> 
-	<img src="C:\Users\zoetr\Documents\Portfolio\Images\BDD.png" alt="Projet 5" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Base De Données</h3>
-        <p class="text-gray-600"> Création d'une base de données dont les valeurs sont mesurées par des capteurs dans différentes villes en France, afin de simplifier et accélerer la recherche et l'analyse de ces dernières.</p> 
-       </a> 
-	</div>
-
-      <!-- Année 1 Project 6 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-       <a href="Année 1_Projet 6.html" target="_blank">  
-	<img src="C:\Users\zoetr\Documents\Portfolio\Images\BTP.jpg" alt="Projet 6" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Bâtiments et Travaux Publiques</h3>
-        <p class="text-gray-600"> Gestion de la construction d'une habitation secondaire (un conteneur), sa modélisation en 3D, ses fondations, et proposer les meilleurs matériaux avec les prix les plus bas.</p> 
-     </a>
-      </div>
-
     </div>
+  </section>
 
-    <!-- Separation Line and Title for Année 2 -->
-    <hr class="my-12 border-gray-300">
-    <h3 class="text-3xl font-semibold text-center mt-10 mb-6">Projets Deuxième Année</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      <!-- Project 1 à Project 4 (Année 2) -->
-      <!-- Project 1 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-        <img src="C:\Users\zoetr\Documents\Portfolio\Images\Ardu.jpg" alt="Projet 1" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Systèmes embarqués</h3>
-        <p class="text-gray-600">Création d'une station météo sur Arduino UNO en le langage C, avec laquelle un utilisateur pourra intéragir tandis que le système traitera des données acquises par des capteurs en temps réel.</p>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-        <img src="C:\Users\zoetr\Documents\Portfolio\Images\POO.png" alt="Projet 2" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Programmation Orientée Objet (POO)</h3>
-        <p class="text-gray-600">Développement de sites interactifs et dynamiques avec une approche orientée objet.</p>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-        <img src="C:\Users\zoetr\Documents\Portfolio\Images\Réseaux.png" alt="Projet 3" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Réseaux</h3>
-        <p class="text-gray-600">Exploration des principes fondamentaux du réseau informatique, y compris les protocoles et la gestion des infrastructures réseau.</p>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-        <img src="C:\Users\zoetr\Documents\Portfolio\Images\web.png" alt="Projet 4" class="mb-4 rounded-lg">
-        <h3 class="text-2xl font-semibold mb-2">Développement Web</h3>
-        <p class="text-gray-600">Conception de sites web responsives et interactifs avec HTML5, CSS, et JavaScript, optimisés pour la performance et l'accessibilité.</p>
-      </div>
-      
+  <!-- Contact Section -->
+  <section id="contact" class="container section-spacing fade-on-scroll text-center">
+    <h2 class="section-title text-4xl font-bold">Contactez-moi</h2>
+    <div>
+      <a href="mailto:zoe.truongcanh@viacesi.fr" class="contact-button">
+        Envoyer un email via Outlook
+      </a>
     </div>
-  </div>
-</section>
-
-
-<!-- Contact Section -->
-<section id="contact" class="container mx-auto py-20 fade-on-scroll">
-  <h2 class="text-4xl font-bold text-center mb-10">Contactez-moi</h2>
-  <div class="flex justify-center">
-    <a href="mailto:zoe.truongcanh@viacesi.fr" target="_blank" 
-       class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition transform hover:scale-105 font-semibold">
-      Envoyer un email via Outlook
-    </a>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Zoé TRUONG CANH. Tous droits réservés.</p>
+  <footer>
+    <div class="container">
+      <p>&copy; Zoé TRUONG CANH. Tous droits réservés.</p> 
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("scroll", function() {
-      const fadeElements = document.querySelectorAll('.fade-on-scroll');
-      fadeElements.forEach(function(element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= window.innerHeight) {
-          element.classList.add('visible');
-        }
-      });
-    });
-  </script>
-
+  <script src="js/scroll-fade.js"></script>
 </body>
 </html>
