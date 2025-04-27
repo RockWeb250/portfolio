@@ -52,30 +52,37 @@
   </div>
 </section>
 
-<section class="logo-marquee">
-  <div class="logo-track">
-    <img src="Images/HTML5.png" alt="HTML Logo">
-    <img src="Images/CSS3.png" alt="CSS Logo">
-    <img src="Images/JavaScript.PNG" alt="JavaScript Logo">
-    <img src="Images/PHP.png" alt="php Logo">
-    <img src="Images/twig.png" alt="tWIG Logo">
-    <img src="Images/Python.PNG" alt="Python Logo">
-    <img src="Images/C++.png" alt="C++ Logo">
-    <img src="Images/C.png" alt="C Logo">
-    <img src="Images/MySQL.png" alt="MySQL Logo">
-    <img src="Images/Wamp.png" alt="Wamp Logo">
-  </div>
-  <div class="logo-container">
-    <img src="Images/HTML5.png" alt="HTML Logo">
-    <img src="Images/CSS3.png" alt="CSS Logo">
-    <img src="Images/JavaScript.PNG" alt="JavaScript Logo">
-    <img src="Images/PHP.png" alt="php Logo">
-    <img src="Images/twig.png" alt="tWIG Logo">
-    <img src="Images/Python.PNG" alt="Python Logo">
-    <img src="Images/C++.png" alt="C++ Logo">
-    <img src="Images/C.png" alt="C Logo">
-    <img src="Images/MySQL.png" alt="MySQL Logo">
-    <img src="Images/Wamp.png" alt="Wamp Logo">
+<!-- Bande défilante des logos de compétences -->
+<section class="logo-marquee section-spacing">
+  <div class="container">
+    <h3 class="section-subtitle">Mes compétences techniques</h3>
+    <div class="logo-track">
+      <div class="logo-container">
+        <img src="Images/HTML5.png" alt="HTML Logo">
+        <img src="Images/CSS3.png" alt="CSS Logo">
+        <img src="Images/JavaScript.PNG" alt="JavaScript Logo">
+        <img src="Images/PHP.png" alt="php Logo">
+        <img src="Images/twig.png" alt="tWIG Logo">
+        <img src="Images/Python.PNG" alt="Python Logo">
+        <img src="Images/C++.png" alt="C++ Logo">
+        <img src="Images/C.png" alt="C Logo">
+        <img src="Images/MySQL.png" alt="MySQL Logo">
+        <img src="Images/Wamp.png" alt="Wamp Logo">
+      </div>
+      <!-- Duplication pour défilement continu -->
+      <div class="logo-container">
+        <img src="Images/HTML5.png" alt="HTML Logo">
+        <img src="Images/CSS3.png" alt="CSS Logo">
+        <img src="Images/JavaScript.PNG" alt="JavaScript Logo">
+        <img src="Images/PHP.png" alt="php Logo">
+        <img src="Images/twig.png" alt="tWIG Logo">
+        <img src="Images/Python.PNG" alt="Python Logo">
+        <img src="Images/C++.png" alt="C++ Logo">
+        <img src="Images/C.png" alt="C Logo">
+        <img src="Images/MySQL.png" alt="MySQL Logo">
+        <img src="Images/Wamp.png" alt="Wamp Logo">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -263,23 +270,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; Zoé TRUONG CANH. Tous droits réservés.</p>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("scroll", function() {
-      const fadeElements = document.querySelectorAll('.fade-on-scroll');
-      fadeElements.forEach(function(element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= window.innerHeight) {
-          element.classList.add('visible');
-        }
-      });
-    });
-  </script>
+  <script src="js/scroll-fade.js"></script>
 </body>
 </html>

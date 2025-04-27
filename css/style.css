@@ -295,7 +295,7 @@ font-weight: bold;
   text-align: center;
 }
 
-/* Logos*/
+/* Bande défilante de logos */
 .logo-marquee {
   background-color: #f1f0f0;
   padding: 30px 0;
@@ -306,25 +306,30 @@ font-weight: bold;
 
 .logo-track {
   display: flex;
-  width: fit-content; 
+  width: fit-content;
   animation: scroll-continuous 20s linear infinite;
 }
 
 .logo-container {
   display: flex;
-  gap: 60px;
   align-items: center;
 }
 
 .logo-container img {
-  width: 120px; 
+  width: 120px;
   height: 120px;
+  object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
+  margin-right: 60px; 
+}
+
+.logo-container:first-child {
+  margin-right: 0; 
 }
 
 .logo-container img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 @keyframes scroll-continuous {
@@ -336,19 +341,12 @@ font-weight: bold;
   }
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media screen and (max-width: 992px) {
-  .logo-container {
-    gap: 50px;
-  }
-  
   .logo-container img {
     width: 100px;
-  }
-  
-  @keyframes scroll-continuous {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    height: 100px;
+    margin-right: 50px; 
   }
 }
 
@@ -357,30 +355,26 @@ font-weight: bold;
     padding: 20px 0;
   }
   
-  .logo-container {
-    gap: 40px;
-  }
-  
   .logo-container img {
     width: 80px;
+    height: 80px;
+    margin-right: 40px; 
   }
   
   .logo-track {
-    animation-duration: 15s; 
+    animation-duration: 15s;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .logo-container {
-    gap: 30px;
-  }
-  
   .logo-container img {
     width: 60px;
+    height: 60px;
+    margin-right: 30px;
   }
   
   .logo-track {
-    animation-duration: 12s; 
+    animation-duration: 12s;
   }
 }
 .divider {
