@@ -35,18 +35,19 @@
       <h1 class="hero-title">Zoé TRUONG CANH</h1>
       <p class="hero-subtitle">Deuxième année de préparation intégrée pour école d'ingénieur.</p>
     </div>
+    <section section id="about"></section>
   </section>
 
   <!-- About Section -->
-<section id="about" class="section-spacing fade-on-scroll">
+<section class="section-spacing fade-on-scroll">
   <div class="container">
     <h2 class="section-title">Aperçu</h2>
     <div class="about-content">
-        <div class="cv-button-container">
-          <a href="pdf/C_V.pdf" download="CV_TRUONG-CANH-Zoé.pdf" class="cv-button">
-            <span>Mon CV</span>
-          </a>
-        </div>
+      <div class="cv-button-container">
+        <a href="#" id="cv-button" class="cv-button">
+          <span>Mon CV</span>
+        </a>
+      </div>
       <div class="about-text">
         <p>Actuellement en 2ᵉ année de cycle préparatoire, je recherche une alternance en informatique pour mon cycle ingénieur à partir de septembre 2025 afin développer mes compétences en développement.</p>
         <a href="https://github.com/RockWeb250" target="_blank" class="link">Mon GitHub</a>
@@ -61,11 +62,12 @@
         </p>
       </div>
     </div>
+    <section section id="competences"></section>
   </div>
 </section>
 
 <!-- Bande défilante des logos de compétences -->
-<section id="competences" class="logo-marquee section-spacing">
+<section class="logo-marquee section-spacing">
   <div class="container">
     <h3 class="section-subtitle">Mes compétences techniques</h3>
     <div class="logo-track">
@@ -128,14 +130,12 @@
         <img src="Images/phpmyadmin.png" alt="PHPmyAdmin Logo">
       </div>
     </div>
+    <section section id="parcours"></section>
   </div>
 </section>
 
-  <div class="section-divider" style="max-width: 50%;"></div>
-
-
   <!-- Timeline Section -->
-  <section id="parcours" class="container section-spacing">
+  <section class="container section-spacing">
     <h3 class="section-subtitle">Mon parcours</h3>
     <div class="timeline-container">
       <!-- 2023-2025: École d'Ingénieur -->
@@ -162,11 +162,12 @@
           </ul>
         </div>
       </div>
+      <section section id="projects"></section>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects-section fade-on-scroll">
+  <section class="projects-section fade-on-scroll">
     <div class="container">
       <h2 class="section-title">Mes Projets</h2>
 
@@ -293,11 +294,12 @@
 
       </div>
       </div>
+      <section section id="langues"></section>
     </div>
   </section>
 
     <!-- Langues Section -->
-    <section id="langues" class="container section-spacing">
+    <section class="container section-spacing">
       <h3 class="section-subtitle">Langues</h3>
       <div class="langues-grid">
         <!-- Bloc Anglais Courant -->
@@ -311,13 +313,14 @@
           <h4 class="langue-title">Anglais technique</h4>
           <p>Je comprends un projet formulé en Anglais et peux rédiger un rapport technique dans cette langue.</p>
         </div>
+        <section section id="contact"></section>
       </div>
     </section>
 
     <div class="section-divider" style="max-width: 50%;"></div>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-spacing fade-on-scroll">
+  <section class="section-spacing fade-on-scroll">
     <div class="container text-center">
       <h2 class="section-title">Contactez-moi</h2>
       <a href="mailto:zoe.truongcanh@viacesi.fr" class="contact-button">
@@ -338,9 +341,31 @@
     </svg>
   </button>
 
+  <!-- Modal pour l'aperçu du CV -->
+<div id="cv-modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <div class="modal-header">
+      <h3 class="section-title">Aperçu de mon CV</h3>
+      <a href="pdf/C_V.pdf" download="CV_TRUONG-CANH-Zoé.pdf" class="download-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Télécharger
+      </a>
+    </div>
+    <div class="modal-body">
+      <iframe src="pdf/C_V.pdf" width="100%" height="500px"></iframe>
+    </div>
+  </div>
+</div>
+
   <script src="js/scroll-fade.js"></script>
   <script src="js/menu-burger.js"></script>
-  <script src="js/back-to-top.js"></script
+  <script src="js/back-to-top.js"></script>
+  <script src="js/modal.js"></script>
 
 </body>
 </html>
