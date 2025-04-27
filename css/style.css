@@ -609,6 +609,7 @@ a.link:hover {
 }
 
 .back-button:hover {
+  color: white;
   background-color: var(--secondary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
