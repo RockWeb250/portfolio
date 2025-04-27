@@ -122,16 +122,20 @@ p, li {
 }
 
 .navbar-links a {
-    color: #F1E9DA;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin: 0 3px;
+  color: #F1E9DA;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0 3px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 nav ul li a:hover {
