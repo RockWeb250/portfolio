@@ -1,18 +1,16 @@
-/* style.css - Fichier CSS commun pour le portfolio */
-
 /* Variables pour les couleurs */
 :root {
-  --primary-color: #0a4275;      /* Bleu foncé */
-  --secondary-color: #1565c0;    /* Bleu moyen */
-  --accent-color: #64b5f6;       /* Bleu clair */
-  --text-color: #333333;         /* Gris foncé pour le texte */
-  --bg-color: #ffffff;           /* Fond légèrement bleuté */
-  --section-bg: #ffffff;         /* Fond des sections */
-  --section-border: #dadada;     /* Bordure bleu très clair */
-  --hover-shadow: rgba(21, 101, 192, 0.2); /* Ombre au survol */
-  --header-overlay: rgba(10, 66, 117, 0.7); /* Overlay pour le header */
-  --footer-bg: #0a4275;          /* Fond du footer */
-  --timeline-color: #dbe9f6;     /* Couleur de fond pour la timeline */
+  --primary-color: #0a4275;    
+  --secondary-color: #1565c0;   
+  --accent-color: #64b5f6;   
+  --text-color: #333333;       
+  --bg-color: #ffffff;         
+  --section-bg: #ffffff;        
+  --section-border: #dadada;    
+  --hover-shadow: rgba(21, 101, 192, 0.2); 
+  --header-overlay: rgba(10, 66, 117, 0.7); 
+  --footer-bg: #0a4275;         
+  --timeline-color: #dbe9f6;   
 }
 
 /* Réinitialisation et styles de base */
@@ -340,7 +338,6 @@ a.github-link:hover {
 }
 
 /* Bande défilante de logos */
-/* CSS mis à jour pour l'animation avec 3 ensembles */
 .logo-marquee {
   background-color: #f1f0f0;
   padding: 30px 0;
@@ -352,7 +349,7 @@ a.github-link:hover {
 .logo-track {
   display: flex;
   width: fit-content;
-  animation: scroll-continuous 30s linear infinite; /* Durée augmentée pour 3 ensembles */
+  animation: scroll-continuous 60s linear infinite; 
 }
 
 .logo-container {
@@ -366,7 +363,7 @@ a.github-link:hover {
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
-  margin-right: 60px; /* Gap uniforme entre chaque logo */
+  margin-right: 60px;
 }
 
 .logo-container img:hover {
@@ -378,7 +375,7 @@ a.github-link:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-66.6666%); /* Animation sur 2/3 de la largeur totale */
+    transform: translateX(-66.6666%);
   }
 }
 
@@ -391,7 +388,7 @@ a.github-link:hover {
   }
   
   .logo-track {
-    animation-duration: 25s;
+    animation-duration: 60s;
   }
 }
 
@@ -407,7 +404,7 @@ a.github-link:hover {
   }
   
   .logo-track {
-    animation-duration: 20s;
+    animation-duration: 60s;
   }
 }
 
@@ -430,7 +427,6 @@ a.github-link:hover {
   margin: 1.5rem 0;
 }
 
-/* Styles pour le bouton de retour */
 .back-button-container {
   display: flex;
   justify-content: center; 
@@ -475,6 +471,25 @@ a.github-link:hover {
 @media (min-width: 768px) {
   .langues-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .langues-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .langues-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .langue-card {
+    padding: 1.2rem;
   }
 }
 
