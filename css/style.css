@@ -222,6 +222,28 @@ font-weight: bold;
   gap: 2rem;
 }
 
+a.github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: var(--secondary-color);
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+a.github-link:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
 .about-text p span {
   display: inline-block;
   background-color: var(--secondary-color);
