@@ -148,6 +148,7 @@ a:hover {
   text-decoration: none;
   color: #1B2A49;
 }
+
 /*Menu Burger */
 .navbar-toggle {
   display: none;
@@ -180,7 +181,7 @@ a:hover {
     width: 100%;
     flex-direction: column;
     background-color: var(--primary-color);
-    padding: 1rem 0;
+    padding: 0; 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     z-index: 100;
   }
@@ -192,6 +193,17 @@ a:hover {
   .navbar-links li {
     text-align: center;
     padding: 0.75rem 0;
+    border-bottom: 1px solid var(--secondary-color); 
+    width: 100%;
+  }
+  
+  .navbar-links li:last-child {
+    border-bottom: none;
+  }
+  
+
+  .navbar-links li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
   }
   
   .navbar .container {
@@ -286,6 +298,10 @@ a:hover {
 
 .navbar-toggle.active span:nth-child(2) {
   opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 .navbar-toggle.active span:nth-child(3) {
@@ -432,6 +448,9 @@ a.link:hover {
     padding: 0.3rem 0.6rem;
     margin: 0.2rem 0.2rem;
     font-size: 0.95rem;
+    display: inline-block;
+    width: calc(33.33% - 0.4rem);
+    text-align: center;
   }
 }
 
@@ -440,8 +459,12 @@ a.link:hover {
     padding: 0.25rem 0.5rem;
     margin: 0.15rem 0.15rem;
     font-size: 0.85rem;
+    display: inline-block;
+    width: calc(33.33% - 0.3rem); 
+    text-align: center;
   }
 }
+
 /* Style du bouton CV */
 .cv-button-container {
   display: flex;
