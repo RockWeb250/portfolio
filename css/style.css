@@ -132,6 +132,150 @@ p, li {
   color: var(--accent-color);
 }
 
+/*Menu Burger */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+  
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+  
+  .navbar-links.active {
+    display: flex;
+  }
+  
+  .navbar-links li {
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+  
+  .navbar .container {
+    position: relative;
+  }
+  
+  .hero {
+    padding: 8rem 0 4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .section-spacing {
+    padding: 3.5rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  a.github-link, a.project-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .contact-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+  
+  .section-spacing {
+    padding: 2.5rem 0;
+  }
+  
+  .hero {
+    padding: 7rem 0 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .cv-button {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+  }
+  
+  a.github-link, a.project-button, .contact-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .back-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  p, li {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* Toggle JS pour le menu mobile */
+.navbar-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Hero section */
 .hero {
   background: linear-gradient(135deg, var(--secondary-color) 0%, #2c4764 100%);
@@ -459,38 +603,14 @@ a.github-link:hover {
   font-size: 1.2em;
 }
 
-/* Langues section */
+/* Langues section*/
 .langues-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 800px;
+  gap: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .langues-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .langues-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .langues-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .langue-card {
-    padding: 1.2rem;
-  }
+  padding: 0 1rem;
 }
 
 .langue-card {
@@ -499,6 +619,10 @@ a.github-link:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .langue-card:hover {
@@ -512,6 +636,31 @@ a.github-link:hover {
   font-weight: bold;
   margin-bottom: 0.75rem;
   color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+  .langues-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .langues-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .langue-card {
+    padding: 1.2rem;
+  }
+  
+  .langue-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Timeline styles */
