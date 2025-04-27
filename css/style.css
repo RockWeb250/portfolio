@@ -630,6 +630,7 @@ a.project-button {
   font-weight: 600;
   transition: all 0.3s ease;
   margin: 0 auto;
+  margin-bottom: 8px;
 }
 
 a.project-button:hover {
