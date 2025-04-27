@@ -296,6 +296,7 @@ font-weight: bold;
 }
 
 /* Bande défilante de logos */
+/* CSS mis à jour pour l'animation avec 3 ensembles */
 .logo-marquee {
   background-color: #f1f0f0;
   padding: 30px 0;
@@ -307,7 +308,7 @@ font-weight: bold;
 .logo-track {
   display: flex;
   width: fit-content;
-  animation: scroll-continuous 20s linear infinite;
+  animation: scroll-continuous 30s linear infinite; /* Durée augmentée pour 3 ensembles */
 }
 
 .logo-container {
@@ -321,11 +322,7 @@ font-weight: bold;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
-  margin-right: 60px; 
-}
-
-.logo-container:first-child {
-  margin-right: 0; 
+  margin-right: 60px; /* Gap uniforme entre chaque logo */
 }
 
 .logo-container img:hover {
@@ -337,16 +334,20 @@ font-weight: bold;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-66.6666%); /* Animation sur 2/3 de la largeur totale */
   }
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media screen and (max-width: 992px) {
   .logo-container img {
     width: 100px;
     height: 100px;
-    margin-right: 50px; 
+    margin-right: 50px;
+  }
+  
+  .logo-track {
+    animation-duration: 25s;
   }
 }
 
@@ -358,11 +359,11 @@ font-weight: bold;
   .logo-container img {
     width: 80px;
     height: 80px;
-    margin-right: 40px; 
+    margin-right: 40px;
   }
   
   .logo-track {
-    animation-duration: 15s;
+    animation-duration: 20s;
   }
 }
 
@@ -374,9 +375,10 @@ font-weight: bold;
   }
   
   .logo-track {
-    animation-duration: 12s;
+    animation-duration: 15s;
   }
 }
+
 .divider {
   border: none;
   height: 1px;
