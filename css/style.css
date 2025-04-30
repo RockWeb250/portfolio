@@ -1115,8 +1115,8 @@ a.project-button:hover {
   z-index: 99;
   opacity: 0;
   transform: translateY(20px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   pointer-events: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Animation d'apparition améliorée */
@@ -1151,24 +1151,65 @@ a.project-button:hover {
   }
 }
 
-.back-to-top.visible {
-  opacity: 1;
-  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, 
-             float 2.5s ease-in-out infinite 0.8s;
-  pointer-events: auto;
+/* Animation pop dessin animé pour la disparition */
+@keyframes cartoonPop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(0.75);
+  }
+  70% {
+    opacity: 0.9;
+    transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
 }
 
+/* Animation de pulse lors du clic */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(21, 101, 192, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0); }
+}
+
+/* États du bouton */
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, 
+             float 2.5s ease-in-out infinite 0.8s;
+}
+
+.back-to-top.hidden {
+  pointer-events: none;
+  /* Animation prioritaire avec !important */
+  animation: cartoonPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.back-to-top.clicked {
+  animation: pulse 0.6s ease !important;
+}
+
+/* Interactions */
 .back-to-top:hover {
   background-color: var(--secondary-color);
   transform: translateY(-5px) !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  animation: none; /* Arrêter l'animation de flottement au survol */
+  animation: none !important; /* Arrêter toutes les animations au survol */
 }
 
 .back-to-top:active {
   transform: translateY(-2px) !important;
 }
 
+/* Style de l'icône */
 .back-to-top svg {
   stroke: white;
   transition: transform 0.2s ease;
@@ -1176,17 +1217,6 @@ a.project-button:hover {
 
 .back-to-top:hover svg {
   transform: translateY(-2px);
-}
-
-/* Style pour l'animation lorsqu'on clique */
-.back-to-top.clicked {
-  animation: pulse 0.6s ease;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(21, 101, 192, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0); }
 }
 
 /* Responsive */
